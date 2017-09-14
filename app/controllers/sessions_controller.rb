@@ -4,10 +4,20 @@ class SessionsController < ApplicationController
   end
 
   def create
-    redirect_to '/'
+    user = User.find_by(user_name: params[:user_name])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      flash[:success] = "You're in Color Wall!"
+      redirect_to '/pages'
+    else
+      flash[:warning] = 'Invalid email or password!'
+      redirect_to '/login'
+    end
   end
 
   def destroy
-    redirect_to '/'
+    session[:user_id] = nil
+    flash[:success] = 'Come back soon!'
+    redirect_to '/login'
   end
 end

@@ -1,0 +1,22 @@
+<h2>Colors Index page</h2>
+
+<h3>All Colors</h3>
+<% @colors.each do |color| %>
+  <div>
+    <h4><a href="/colors/<%= color.id %>"><%= color.name %></a></h4>
+    <p><%= color.hex %></p>
+    <hr>
+  </div>  
+<% end %>
+
+<h3>All Cards</h3>
+<% @cards.each do |card| %>
+  <div>
+    <h4><a href="/cards/<%= card.id %>"><%= card.name %></a></h4>
+    <p><%= card.color_one %></p>
+    <p><%= card.color_two %></p>
+    <p><%= card.color_three %></p>
+    <hr>
+  </div>  
+<% end %>
+

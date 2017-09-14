@@ -1,0 +1,2 @@
+class ProjectColor < ApplicationRecord
+end

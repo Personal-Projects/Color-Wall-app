@@ -1,4 +1,4 @@
-class WallController < ApplicationController
+class WallsController < ApplicationController
   def index
     render 'index.html.erb'
   end
