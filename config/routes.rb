@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   patch '/walls/:id' => 'walls#update' # Success update project
   delete '/walls/:id' => 'walls#destroy' # Delete project
 
-  get '/users' => 'users#index' # My Profile
+  get '/users' => 'users#index' # Profile page
   get '/signup' => 'users#new' # New users signup page
   post '/users' => 'users#create' # Success signup
-  # get '/users/:id' => 'users#show' # Other's profile (save for later)
+  get '/users/:id' => 'users#show' # Other user's page
   get '/users/:id/edit' => 'users#edit' # Other's profile
   patch '/users/:id' => 'users#update' # Edit profile
   get '/users/:id' => 'users#destroy' # Delete profile
@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get '/matches' => 'matches#create' # Success card generated.
 
   get '/colors' => 'colors#index' # Index of all colors
+  post '/colors' => 'colors#create'
   get '/colors/:id' => 'colors#show' # Show a single color
   get '/cards/:id' => 'cards#show' # Show a single card
 

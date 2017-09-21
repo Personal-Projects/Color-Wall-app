@@ -1,1 +1,23 @@
-<h3>View Other's Profile Page</h3>
+<h3>My Profile Page</h3>
+
+<p>Baridi/About</p>
+<p>The page has the following functions I need:</p>
+<ul>
+  <li>Place to put profile picture</li>
+  <li>Place to put personal summary (incorporate user info here)</li>
+  <li>Has tiny boxes for colors (for MY WALL)</li>
+</ul>
+<br>
+<p>****************</p>
+<h3>Username: <%= @user.user_name %></h3>
+<p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
+<p>Email: <%= @user.email %></p>
+<p>Birthday: <%= @user.birth_date %></p>
+<p>Favorite color: <%= @user.favorite_color %></p>
+<% if current_user %>
+  <%= link_to "Edit Profile", "/users/#{@user.id}/edit", class: "btn btn-success" %>
+<% end %>
+<br>
+<br>
+<p>****************</p>
+

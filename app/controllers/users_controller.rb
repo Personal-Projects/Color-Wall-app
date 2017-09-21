@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  def index
-    render 'index.html.erb'
-  end
+  # def index
+
+  # end
 
   def new
     render 'new.html.erb'
@@ -28,12 +28,34 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = current_user
+    render 'show.html.erb'
+  end
+
   def edit
+    @user = User.find_by(id: params[:id])
     render 'edit.html.erb'
   end
 
   def update
-    redirect_to '/'
+    @user = User.find_by(id: params[:id])
+    @user.assign_attributes(
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      email: params[:email],
+      user_name: params[:user_name],
+      birth_date: params[:birth_date],
+      favorite_color: params[:favorite_color],
+      password: params[:password],
+      password_confirmation: params[:password_confirmation]
+    )
+    if @user.save
+      flash[:success] = "Information updated"
+      redirect_to "/users/#{@user.id}"
+    else
+      render "edit.html.erb"
+    end
   end
 
   def destroy

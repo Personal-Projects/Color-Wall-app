@@ -42,8 +42,8 @@
                   <% if current_user %>
                     <% current_user.user_name %>
                       <li><a href="http://localhost:3000/walls">My Wall</a></li>
+                      <li><a href="http://localhost:3000/users/<%= current_user.id %>">My Profile</a></li>
                       <li role="separator" class="divider"></li>
-                      <li><a href="http://localhost:3000/users">My Profile</a></li>
                       <li><a href="http://localhost:3000/logout">Logout</a></li>
                   <% else %>    
                     <li><a href="http://localhost:3000/login">Login</a></li>
@@ -67,3 +67,7 @@
     </div>
   </body>
 </html>
+
+
+
+
