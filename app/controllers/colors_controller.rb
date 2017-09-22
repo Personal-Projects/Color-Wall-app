@@ -1,16 +1,8 @@
 class ColorsController < ApplicationController
   def index
-    @color = Color.new
+    @colors = Color.all
+    @hex = ('#' + Color.find_by(id: 9000000).hex)
     render 'index.html.erb'
-  end
-
-  def create
-    @color = Color.new(
-      name: params[:name],
-      hex: params[:hex]
-    )
-    @color.save
-    render 'show.html.erb'
   end
 
   def show

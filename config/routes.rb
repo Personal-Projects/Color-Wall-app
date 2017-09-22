@@ -30,7 +30,6 @@ Rails.application.routes.draw do
   get '/matches' => 'matches#create' # Success card generated.
 
   get '/colors' => 'colors#index' # Index of all colors
-  post '/colors' => 'colors#create'
   get '/colors/:id' => 'colors#show' # Show a single color
   get '/cards/:id' => 'cards#show' # Show a single card
 
