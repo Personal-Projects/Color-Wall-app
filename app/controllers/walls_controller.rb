@@ -1,5 +1,7 @@
 class WallsController < ApplicationController
   def index
+    @projects = Project.all
+
     render 'index.html.erb'
   end
 

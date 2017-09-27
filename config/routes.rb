@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get '/pages' => 'pages#index' # Home page
+  get '/pages' => 'pages#index' # Home page DONE
 
-  get '/walls' => 'walls#index' # My Walls page
+  get '/walls' => 'walls#index' # My Walls page 
   get '/walls/new' => 'walls#new' # New Project page
   post '/walls' => 'walls#create' # Success new project created.
   get '/walls/:id' => 'walls#show' # My Projects page
@@ -9,19 +9,19 @@ Rails.application.routes.draw do
   patch '/walls/:id' => 'walls#update' # Success update project
   delete '/walls/:id' => 'walls#destroy' # Delete project
 
-  get '/users' => 'users#index' # Profile page
-  get '/signup' => 'users#new' # New users signup page
-  post '/users' => 'users#create' # Success signup
-  get '/users/:id' => 'users#show' # Other user's page
-  get '/users/:id/edit' => 'users#edit' # Other's profile
-  patch '/users/:id' => 'users#update' # Edit profile
-  get '/users/:id' => 'users#destroy' # Delete profile
+  get '/users' => 'users#index' # Profile page DONE
+  get '/signup' => 'users#new' # New users signup page DONE
+  post '/users' => 'users#create' # Success signup DONE
+  # get '/users/:id' => 'users#show' # Other user's page 
+  get '/users/:id/edit' => 'users#edit' # Other's profile DONE
+  patch '/users/:id' => 'users#update' # Edit profile DONE
+  # get '/users/:id' => 'users#destroy' # Delete profile 
 
-  get '/login' => 'sessions#new' # Login page
-  post '/login' => 'sessions#create' # Success log in
-  get '/logout' => 'sessions#destroy' # Logout
+  get '/login' => 'sessions#new' # Login page DONE
+  post '/login' => 'sessions#create' # Success log in DONE
+  get '/logout' => 'sessions#destroy' # Logout DONE
 
-  get '/quizzes' => 'quizzes#index' # What Color Are You cover page
+  get '/quizzes' => 'quizzes#index' # What Color Are You cover page 
   get '/quizzes/new' => 'quizzes#new' # What Color Are You form page
   post '/quizzes' => 'quizzes#create' # Success color generated.
 
@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get '/matches' => 'matches#create' # Success card generated.
 
   get '/colors' => 'colors#index' # Index of all colors
+
   get '/colors/:id' => 'colors#show' # Show a single color
   get '/cards/:id' => 'cards#show' # Show a single card
 
