@@ -10,20 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170914023344) do
+ActiveRecord::Schema.define(version: 20170928010521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "card_colors", force: :cascade do |t|
+    t.integer "card_id"
+    t.integer "color_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "cards", force: :cascade do |t|
     t.string "name"
-    t.string "color_one"
-    t.string "color_two"
-    t.string "color_three"
-    t.string "color_four"
     t.string "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "color_id"
+    t.string "colors"
   end
 
   create_table "colors", force: :cascade do |t|
@@ -32,6 +37,7 @@ ActiveRecord::Schema.define(version: 20170914023344) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "card_id"
   end
 
   create_table "project_cards", force: :cascade do |t|

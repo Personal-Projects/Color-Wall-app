@@ -26,10 +26,10 @@
 #   end
 # }
 
-# Color.all.each do |color|
-#   color.hex = '#' + color.hex
-#   color.hex.save
-# end
+Color.all.each do |color|
+  color.hex = '#' + color.hex
+  color.save
+end
 
 
 

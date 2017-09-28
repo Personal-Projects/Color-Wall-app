@@ -31,8 +31,8 @@ Rails.application.routes.draw do
 
   get '/colors' => 'colors#index' # Index of all colors
 
-  get '/colors/:id' => 'colors#show' # Show a single color
-  get '/cards/:id' => 'cards#show' # Show a single card
+  # get '/colors/:id' => 'colors#show' # Show a single color`
+  post '/cards' => 'cards#create' # Show a single card
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
