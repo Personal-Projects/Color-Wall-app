@@ -3,3 +3,16 @@
 <br>
 <h3>My Projects</h3>
 
+<section id="projects">
+  <div class="row">
+    <% @projects.each_slice(3) do |three_projects| %>
+      <% three_projects.each do |project| %>
+        <div class="col-md-4">
+          <div id="wallWell" class="well">
+            <p>Name: <a href="/projects/<%= project.id %>"><%= project.name %></a></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %> 
+  </div>
+</section>

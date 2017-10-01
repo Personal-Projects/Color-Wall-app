@@ -2,12 +2,12 @@ Rails.application.routes.draw do
   get '/pages' => 'pages#index' # Home page DONE
 
   get '/walls' => 'walls#index' # My Walls page 
-  get '/walls/new' => 'walls#new' # New Project page
-  post '/walls' => 'walls#create' # Success new project created.
-  get '/walls/:id' => 'walls#show' # My Projects page
-  get '/walls/:id/edit' => 'walls#edit' # Edit a Project
-  patch '/walls/:id' => 'walls#update' # Success update project
-  delete '/walls/:id' => 'walls#destroy' # Delete project
+  get '/projects/new' => 'projects#new' # New Project page
+  post '/projects' => 'projects#create' # Success new project created.
+  get '/projects/:id' => 'projects#show' # My Projects page
+  get '/projects/:id/edit' => 'projects#edit' # Edit a Project
+  patch '/projects/:id' => 'projects#update' # Success update project
+  delete '/projects/:id' => 'projects#destroy' # Delete project
 
   # get '/users' => 'users#index' # Profile page DONE
   get '/signup' => 'users#new' # New users signup page DONE
