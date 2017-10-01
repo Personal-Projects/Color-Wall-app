@@ -27,9 +27,10 @@
 # }
 
 Color.all.each do |color|
-  color.hex = '#' + color.hex
-  color.save
+  if color[0] != '#'
+    color.hex = '#' + color.hex
+    color.save
+  end
 end
-
 
 

@@ -14,6 +14,7 @@
   <br>
   <h3>Tetrad Palette</h3>
   <%= check_box_tag '' 'accept' %>
+
   <div>
     <% @hex.palette.tetrad.each do |tetrad_color|%>
       <div style="background:<%= tetrad_color %>" class="box"><%= tetrad_color %></div>
@@ -23,6 +24,7 @@
   <h3>Complement Palette</h3>
   <%= check_box_tag '' 'accept' %>
   <div>
+
     <% @hex.palette.complement.each do |complement_color|%>
       <div style="background:<%= complement_color %>" class="box"><%= complement_color %></div>
     <% end %>
@@ -34,6 +36,7 @@
     <% @hex.palette.split_complement.each do |split_complement_color|%>
       <div style="background:<%= split_complement_color %>" class="box"><%= split_complement_color %></div>
     <% end %>
+
   </div>
   <br>
   <h3>Analogous Palette</h3>
@@ -42,6 +45,7 @@
     <% @hex.palette.analogous.each do |analogous_color|%>
       <div style="background:<%= analogous_color %>" class="box"><%= analogous_color %></div>
     <% end %>
+
   </div>
   <br>
   <h3>Monochromatic Palette</h3>
@@ -51,6 +55,7 @@
       <div style="background:<%= monochromatic_color %>" class="box"><%= monochromatic_color %></div>
     <% end %>
   </div>
+  
   <br>
   <br>
   <br>

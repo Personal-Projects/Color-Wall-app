@@ -9,11 +9,11 @@ Rails.application.routes.draw do
   patch '/walls/:id' => 'walls#update' # Success update project
   delete '/walls/:id' => 'walls#destroy' # Delete project
 
-  get '/users' => 'users#index' # Profile page DONE
+  # get '/users' => 'users#index' # Profile page DONE
   get '/signup' => 'users#new' # New users signup page DONE
   post '/users' => 'users#create' # Success signup DONE
-  # get '/users/:id' => 'users#show' # Other user's page 
-  get '/users/:id/edit' => 'users#edit' # Other's profile DONE
+  get '/users/:id' => 'users#show' # Other user's page 
+  get '/users/:id/edit' => 'users#edit' # Profile page DONE
   patch '/users/:id' => 'users#update' # Edit profile DONE
   # get '/users/:id' => 'users#destroy' # Delete profile 
 
