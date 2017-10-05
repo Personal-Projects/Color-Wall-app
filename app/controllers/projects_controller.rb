@@ -11,12 +11,11 @@ class ProjectsController < ApplicationController
       concept: params[:concept]
     )
     if project.save
-      session[:project_id] = current_user.id
-      flash[:success] = 'Successfully created account!'
-      redirect_to '/pages'
+      flash[:success] = 'Successfully created project!'
+      redirect_to '/walls'
     else
-      flash[:warning] = 'Invalid email or password!'
-      redirect_to '/signup'
+      flash[:warning] = 'Invalid field'
+      redirect_to 'new.html.erb'
     end
   end
 

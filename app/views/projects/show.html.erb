@@ -4,7 +4,15 @@
 <p>Start Date: <%= @project.start_date %></p>
 <p>Finish Date: <%= @project.finish_date %></p>
 <p>Concept: <%= @project.concept %></p>
-
-<%= link_to "Edit", "/projects/#{@project.id}/edit", class: "btn btn-success" %>
-<%= link_to "Delete", "/projects/#{@project.id}", {method: :delete, class: "btn btn-danger" } %>
+<p>Colors: 
+  <% @project.colors.each do |color| %>
+      <p><%= color.hex %><div style="background:<%= color.hex %>" class="box"></div></p>
+  <% end %>
+</p>
+<br>
+<br>
+<p>
+  <%= link_to "Edit", "/projects/#{@project.id}/edit", class: "btn btn-success" %>
+  <%= link_to "Delete", "/projects/#{@project.id}", {method: :delete, class: "btn btn-danger" } %>
+</p>
 

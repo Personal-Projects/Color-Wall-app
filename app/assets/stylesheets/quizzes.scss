@@ -1,0 +1,38 @@
+// Place all the styles related to the quiz controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+background-color: #FFB6C1;
+font-family: Helvetica;
+margin-bottom: 100px;
+}
+
+.big_box {
+  float: left;
+  width: 200px;
+  height: 150px;
+  border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.form-group input[type="checkbox"] {
+    display: none;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none;
+}
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block;   
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none;   
+}

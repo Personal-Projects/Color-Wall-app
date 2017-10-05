@@ -21,9 +21,10 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create' # Success log in DONE
   get '/logout' => 'sessions#destroy' # Logout DONE
 
-  get '/quizzes' => 'quizzes#index' # What Color Are You cover page 
+  get '/quizzes' => 'quizzes#index' # What Color Are You cover page
   get '/quizzes/new' => 'quizzes#new' # What Color Are You form page
   post '/quizzes' => 'quizzes#create' # Success color generated.
+  get '/results' => 'quizzes#result' # Quiz form result
 
   get '/matches' => 'matches#index' # Color Matches Your Projects cover page
   get '/matches/new' => 'matches#new' # Color Matches Your Projects form page
