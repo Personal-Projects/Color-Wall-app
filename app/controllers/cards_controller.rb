@@ -1,39 +1,43 @@
 class CardsController < ApplicationController
   def create
-    card = Card.new(
-      name: 'default name',
-      user_id: current_user.id
-    )
-    card.save
-    p '*' * 50
-    # write the code in such a way that it can process however many colors coming from params
-      p card_color1 = Color.find_by(hex: params[:colors][0][1..6]).id
-      p card_color2 = Color.find_by(hex: params[:colors][1][1..6]).id
-      p card_color3 = Color.find_by(hex: params[:colors][2][1..6]).id
-    # end
-    p '*' * 50
-    card_color1 = CardColor.new(
-      card_id: card.id,
-      color_id: card_color1
-    )
-    card_color1.save
-    p card_color1.errors.full_messages
+    params[:colors].each do |key, value|
+      p key
+      card = Card.new(
+        name: 'card',
+        user_id: current_user.id
+      )
+      card.save
+      p value
+      value.each do |color|
+        color_id = Color.find_by(hex: color).id
+        card_color = CardColor.new(
+          card_id: card.id,
+          color_id: color_id
+        )
+        card_color.save
+      end
+    end
+    redirect_to "/walls"
+  end
 
-    card_color2 = CardColor.new(
-      card_id: card.id,
-      color_id: card_color2
+  def edit
+    @card = Card.find_by(id: params[:id])
+    render 'edit.html.erb'
+  end
+
+  def update
+    @card = Card.find_by(id: params[:id])
+    @card.assign_attributes(
+      name: params[:name]
     )
-    card_color2.save
-    p card_color2.errors.full_messages
+    @card.save
+    redirect_to '/walls'
+  end
 
-    card_color3 = CardColor.new(
-      card_id: card.id,
-      color_id: card_color3
-    )
-    card_color3.save
-    p card_color3.errors.full_messages
-
-
-    render 'walls/index.html.erb'
+  def destroy
+    @card = Card.find_by(id: params[:id])
+    @card.destroy
+    flash[:danger] = "You just deleted a card!"
+    redirect_to '/walls'
   end
 end

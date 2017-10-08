@@ -1,0 +1,9 @@
+<%= form_tag("/cards/#{@card.id}", method: :patch) do %>
+  <h3>
+    <%= label_tag :Card_Name %>
+    <%= text_field_tag :name, @card.name %>
+  </h3>
+  <br>
+  <p><%= submit_tag "Edit my card" %></p>
+  <%= link_to "Delete Card", "/cards/#{@card.id}", {method: :delete, class: "btn btn-danger" } %>
+<% end %>

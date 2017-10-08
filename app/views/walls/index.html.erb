@@ -1,8 +1,9 @@
-<h3>My Wall Page</h3>
+<h1>My Wall</h1>
 <br>
 <br>
 <h3>My Projects</h3>
-
+<h4><a href="/projects/new">Create new project</a></h4>
+<br>
 <section id="projects">
   <div class="row">
     <% @projects.each_slice(3) do |three_projects| %>
@@ -13,6 +14,23 @@
           </div>
         </div>
       <% end %>
+    <% end %> 
+  </div>
+</section>
+<br>
+<h3>My Cards</h3>
+<h4><a href="/colors">Add new card</a></h4>
+<br>
+<section id="cards">
+  <div class="row">
+    <% @cards.each do |card| %>
+      <div class="col-md-12">
+        <% card.colors.each do |card_color| %>
+          <div style="background:<%= card_color.hex %>" class="box"></div>
+        <% end %>
+        <p><a href="/cards/<%= card.id %>/edit"><%= card.name %></a></p>
+        <br>
+      </div>
     <% end %> 
   </div>
 </section>

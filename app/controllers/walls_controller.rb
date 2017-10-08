@@ -1,7 +1,7 @@
 class WallsController < ApplicationController
   def index
-    @projects = Project.all
-    @cards = Card.all
+    @projects = current_user.projects
+    @cards = current_user.cards
     @colors = current_user.colors
     render 'index.html.erb'
   end

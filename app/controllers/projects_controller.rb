@@ -8,7 +8,8 @@ class ProjectsController < ApplicationController
       name: params[:name],
       start_date: params[:start_date],
       finish_date: params[:finish_date],
-      concept: params[:concept]
+      concept: params[:concept],
+      user_id: current_user.id
     )
     if project.save
       flash[:success] = 'Successfully created project!'

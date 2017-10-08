@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   patch '/projects/:id' => 'projects#update' # Success update project
   delete '/projects/:id' => 'projects#destroy' # Delete project
 
+  post '/color_projects/:id' => 'projects#create'
+
   # get '/users' => 'users#index' # Profile page DONE
   get '/signup' => 'users#new' # New users signup page DONE
   post '/users' => 'users#create' # Success signup DONE
@@ -32,8 +34,11 @@ Rails.application.routes.draw do
 
   get '/colors' => 'colors#index' # Index of all colors
 
-  # get '/colors/:id' => 'colors#show' # Show a single color`
+  # get '/colors/:id' => 'colors#show' # Show a single color
   post '/cards' => 'cards#create' # Show a single card
+  get '/cards/:id/edit' => 'cards#edit'
+  patch '/cards/:id' => 'cards#update'
+  delete '/cards/:id' => 'cards#destroy'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
