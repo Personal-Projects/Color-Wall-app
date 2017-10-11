@@ -1,4 +1,9 @@
 class CardsController < ApplicationController
+  def index
+    @cards = current_user.cards
+    render 'index.html.erb'
+  end
+
   def create
     params[:colors].each do |key, value|
       p key
@@ -17,7 +22,7 @@ class CardsController < ApplicationController
         card_color.save
       end
     end
-    redirect_to "/walls"
+    redirect_to "/cards"
   end
 
   def edit
@@ -31,13 +36,13 @@ class CardsController < ApplicationController
       name: params[:name]
     )
     @card.save
-    redirect_to '/walls'
+    redirect_to '/cards'
   end
 
   def destroy
     @card = Card.find_by(id: params[:id])
     @card.destroy
     flash[:danger] = "You just deleted a card!"
-    redirect_to '/walls'
+    redirect_to '/cards'
   end
 end

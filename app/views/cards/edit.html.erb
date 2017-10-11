@@ -1,9 +1,27 @@
-<%= form_tag("/cards/#{@card.id}", method: :patch) do %>
-  <h3>
-    <%= label_tag :Card_Name %>
-    <%= text_field_tag :name, @card.name %>
-  </h3>
-  <br>
-  <p><%= submit_tag "Edit my card" %></p>
-  <%= link_to "Delete Card", "/cards/#{@card.id}", {method: :delete, class: "btn btn-danger" } %>
-<% end %>
+<div class="left-container">
+  <div class="main-container scroll-container">
+    <div class="main-header">
+      <h1>Edit Card</h1>
+    </div>
+    <% @card.colors.each do |color| %>
+      <div class="map-container" style="background:<%= color.hex %>"></div>
+    <% end %>
+    <div class="main-content-container">
+      <%= form_tag "/cards/#{@card.id}", method: :patch do %>
+        <div class="form-group"><label>Card Name</label><input type="text" name="name" value="<%= @card.name %>"  class="form-control" required /></div>
+        <div class="form-group"><input type="submit" value="Edit Card" class="btn btn-default">
+          <%= link_to "Delete Card", "/cards/#{@card.id}", {method: :delete, class: "btn btn-danger" } %>
+        </div>
+      <% end %>
+    </div>
+    <footer>
+      <div class="footer-lower">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="copyright">Copyright 2017. All rights reserved.</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>

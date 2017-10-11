@@ -1,45 +1,31 @@
-<h1>Signup!</h1>
-<%= form_tag '/users', method: :post do  %>
-  <div>
-    <%= label_tag :first_name %>
-    <%= text_field_tag :first_name %>
+<div class="left-container">
+  <div class="main-container scroll-container">
+    <div class="main-header">
+      <h1>User Registration</h1>
+    </div>
+    <div class="main-content-container">
+      <h1>Not a user? No problem!</h1>
+      <%= form_tag '/users', method: :post do  %>
+        <div class="register_form" class="form-group"><label>First Name: </label><input type="text" name="first_name" value="" class="form-control" required /></div>
+        <div class="register_form" class="form-group"><label>Last Name: </label><input type="text" name="last_name" value=""  class="form-control" required /></div>
+        <div class="register_form" class="form-group"><label>Email: </label><input type="email" name="email" value=""  class="form-control" required /></div>
+        <div class="register_form" class="form-group"><label>Username: </label><input type="text" name="user_name" value=""  class="form-control" required /></div>
+        <div class="register_form" class="form-group"><label>Birthdate: </label><input name="birth_date" class="form-control" required></input></div>
+        <div class="register_form" class="form-group"><label>Favorite Color: </label><input name="favorite_color" class="form-control" required></input></div>
+        <div class="register_form" class="form-group"><label>Password: </label><input type="password" name="password" class="form-control" required></input></div>
+        <div class="register_form" class="form-group"><label>Password: </label><input type="password" name="password_digest" class="form-control" required></input></div>
+        <div class="register_form" class="form-group"><input type="submit" value="Sign up!" class="btn btn-default"></div>
+        <br>
+      <% end %>
+    </div>
+    <footer>
+      <div class="footer-lower">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="copyright">Copyright 2017. All rights reserved.</div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
-  <br>
-  <div>
-    <%= label_tag :last_name %>
-    <%= text_field_tag :last_name %>
-  </div>
-  <br>
-  <div>
-    <%= label_tag :email %>
-    <%= email_field_tag :email %>
-  </div>
-  <br>
-  <div>
-    <%= label_tag :username %>
-    <%= text_field_tag :user_name %>
-  </div>
-  <br>
-  <div>
-    <%= label_tag :birth_date %>
-    <%= text_field_tag :birth_date %>
-  </div>
-  <br>
-  <div>
-    <%= label_tag :favorite_color %>
-    <%= text_field_tag :favorite_color %>
-  </div>
-  <br>
-  <div>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
-  <br>
-  <div>
-    <%= label_tag :password %>
-    <%= password_field_tag :password_confirmation %>
-  </div>
-  <br>
-  <p><%= submit_tag "Signup!"%></p>
-<% end %>
-
+</div>

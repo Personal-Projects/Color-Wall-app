@@ -1,25 +1,28 @@
-<h3>Edit Profile Page</h3>
-
-<%= form_tag("/projects/#{@project.id}", method: :patch) do %>
-    <div>
-      <%= label_tag :name %>
-      <%= text_field_tag :name, @project.name %>
+<div class="left-container">
+  <div class="main-container scroll-container">
+    <div class="main-header">
+      <h1>Edit Project</h1>
     </div>
-    <br>
-    <div>
-      <%= label_tag :start_date %>
-      <%= text_field_tag :start_date, @project.start_date %>
+    <div class="map-container" style="background-image: url(/);""></div>
+    <div class="main-content-container">
+      <%= form_tag "/projects/#{@project.id}", method: :patch do %>
+        <div class="form-group"><label>Project Name: </label><input type="text" name="name" value="<%= @project.name %>"  class="form-control" required /></div>
+        <div class="form-group"><label>Start Date: </label><input type="text" name="start_date" value="<%= @project.start_date %>"  class="form-control" required /></div>
+        <div class="form-group"><label>Deadline: </label><input type="text" name="finish_date" value="<%= @project.finish_date %>"  class="form-control" required /></div>
+        <div class="form-group"><label>Concept: </label><textarea name="concept" class="form-control" required><%= @project.concept %></textarea></div>
+        <div class="form-group"><input type="submit" value="Edit Project" class="btn btn-default">
+          <%= link_to "Delete Card", "/projects/#{@project.id}", {method: :delete, class: "btn btn-danger" } %>
+        </div>
+      <% end %>
     </div>
-    <br>
-    <div>
-      <%= label_tag :finish_date %>
-      <%= text_field_tag :finish_date, @project.finish_date %>
-    </div>
-    <br>
-    <div>
-      <%= label_tag :concept %>
-      <%= text_field_tag :concept, @project.concept %>
-    </div>
-    <br>
-    <p><%= submit_tag "Edit my project" %></p>
-  <% end %>
+    <footer>
+      <div class="footer-lower">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="copyright">Copyright 2017. All rights reserved.</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>

@@ -1,4 +1,9 @@
 class ProjectsController < ApplicationController
+  def index
+    @projects = current_user.projects
+    render 'index.html.erb'
+  end
+
   def new
     render 'new.html.erb'
   end
@@ -11,18 +16,7 @@ class ProjectsController < ApplicationController
       concept: params[:concept],
       user_id: current_user.id
     )
-    if project.save
-      flash[:success] = 'Successfully created project!'
-      redirect_to '/walls'
-    else
-      flash[:warning] = 'Invalid field'
-      redirect_to 'new.html.erb'
-    end
-  end
-
-  def show
-    @project = Project.find_by(id: params[:id])
-    render 'show.html.erb'
+    redirect_to '/projects'
   end
 
   def edit
@@ -38,12 +32,8 @@ class ProjectsController < ApplicationController
       finish_date: params[:finish_date],
       concept: params[:concept]
     )
-    if @project.save
-      flash[:success] = "Information updated"
-      redirect_to "/projects/#{@project.id}"
-    else
-      render "edit.html.erb"
-    end
+    @project.save
+    redirect_to "/projects"
   end
 
   def destroy

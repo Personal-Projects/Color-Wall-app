@@ -1,0 +1,35 @@
+<div class="left-container">
+  <div class="main-container scroll-container">
+    <div class="blog-post-container">
+      <div class="standard-post-box format-standard" style="background-image: url(/);"> 
+        <em class="post-format-icon"></em>
+        <div class="standard-post-box-content">
+          <h2 class="standard-post-title"><a href="/colors" title="Create a new card"><center>Create a new card</center></a></h2>
+        </div>
+      </div>
+      <% @cards.each do |card| %>
+        <!-- post start -->
+        <% card.colors.each do |card_color| %>
+          <div class="standard-post-box format-standard" style="background:<%= card_color.hex %>";"> 
+            <em class="post-format-icon"></em>
+            <div class="standard-post-box-content">
+              <h2 class="standard-post-title"><a href="/cards/<%= card.id %>/edit" title="A standard post with image"><%= card.name %></a></h2>
+              <p>Hex: <%= card_color.hex %></p>       
+              <p><a href="/cards/<%= card.id %>/edit" class="btn more">Edit Card</a></p>
+            </div>
+          </div>
+        <% end %>
+        <!-- post end -->
+      <% end %>
+    </div>
+    <footer>
+      <div class="footer-lower">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="copyright">Copyright 2017. All rights reserved.</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
