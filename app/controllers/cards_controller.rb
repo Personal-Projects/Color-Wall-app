@@ -6,21 +6,17 @@ class CardsController < ApplicationController
 
   def create
     params[:colors].each do |key, value|
-      p key
       card = Card.new(
-        name: 'card',
-        user_id: current_user.id
+        name: params[:card_name],
+        user_id: current_user.id,
+        color1: value[0],
+        color2: value[1],
+        color3: value[2],
+        color4: value[3],
+        color5: value[4],
+        color6: value[5]
       )
       card.save
-      p value
-      value.each do |color|
-        color_id = Color.find_by(hex: color).id
-        card_color = CardColor.new(
-          card_id: card.id,
-          color_id: color_id
-        )
-        card_color.save
-      end
     end
     redirect_to "/cards"
   end

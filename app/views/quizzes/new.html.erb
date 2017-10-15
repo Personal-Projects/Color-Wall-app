@@ -1,97 +1,192 @@
-<h1>What Color Are You? Quiz form page</h1>
 
-<%= form_tag "/quizzes", method: :post do %>
-  <h3>Choose the words or phrases that best suits you:</h3>
-  <hr>
-    <strong>1. &emsp;</strong><div class="radio-inline">
-      <label><input type="radio" name="answer1" value="Confident">Confident</label>
+<div class="left-container">
+  <div class="main-container scroll-container">
+    <div class="blog-post-container">
+      <div class="standard-post-box format-standard" style="background:black"> 
+        <div class="standard-post-box-content">
+          <h4 class="standard-post-title"><center><font color="white">Choose the words that best suits you:</font></center></h4>
+        </div>
+      </div>
+
+      <%= form_tag "/quizzes", method: :post do %>
+
+        <!-- start Q1 -->
+        <div class="list-post-box format-standard">
+          <div class="list-post">
+            &emsp;<strong>1. &emsp;</strong><div class="radio-inline">
+              <label><input type="radio" name="answer1" value="Confident">Confident</label>
+            </div>
+            &emsp;
+            <div class="radio-inline">
+              <label><input type="radio" name="answer1" value="Trusting">Trusting</label>
+            </div>
+            &emsp;
+            <div class="radio-inline">
+              <label><input type="radio" name="answer1" value="Structured">Structured</label>
+            </div>
+          </div>
+        </div>
+        <!-- end Q1 -->
+
+        <!-- start Q2 -->
+        <div class="list-post-box format-standard"> 
+          <div class="list-post">
+            &emsp;<strong>2. &emsp;</strong><div class="radio-inline">
+              <label><input type="radio" name="answer2" value="Spontaneous">Spontaneous</label>
+            </div>
+            &emsp;
+            <div class="radio-inline">
+              <label><input type="radio" name="answer2" value="Dreamer">Dreamer</label>
+            </div>
+            &emsp;
+            <div class="radio-inline">
+              <label><input type="radio" name="answer2" value="Analytical">Analytical</label>
+            </div>
+          </div>
+        </div>
+        <!-- end Q2 -->
+
+        <!-- start Q3 -->
+        <div class="list-post-box format-standard"> 
+          <div class="list-post">
+            &emsp;<strong>3. &emsp;</strong><div class="radio-inline">
+              <label><input type="radio" name="answer3" value="Stubborn">Stubborn</label>
+            </div>
+            &emsp;
+            <div class="radio-inline">
+              <label><input type="radio" name="answer3" value="Dictatorial">Dictatorial</label>
+            </div>
+            &emsp;
+            <div class="radio-inline">
+              <label><input type="radio" name="answer3" value="Rebellious">Rebellious</label>
+            </div>
+          </div>
+        </div>
+        <!-- end Q3 -->
+
+        <!-- start Q4 -->
+        <div class="list-post-box format-standard"> 
+          <div class="list-post">
+            &emsp;<strong>4. &emsp;</strong><div class="radio-inline">
+              <label><input type="radio" name="answer4" value="Persistent">Persistent</label>
+            </div>
+            &emsp;
+            <div class="radio-inline">
+              <label><input type="radio" name="answer4" value="Demanding">Demanding</label>
+            </div>
+            &emsp;
+            <div class="radio-inline">
+              <label><input type="radio" name="answer4" value="Passionate">Passionate</label>
+            </div>
+          </div>
+        </div>
+        <!-- end Q4 -->
+
+        <!-- start Q5 -->
+        <div class="list-post-box format-standard"> 
+          <div class="list-post">
+            &emsp;<strong>5. &emsp;</strong><div class="radio-inline">
+              <label><input type="radio" name="answer5" value="Nurturing">Nurturing</label>
+            </div>
+            &emsp;
+            <div class="radio-inline">
+              <label><input type="radio" name="answer5" value="Cautious">Cautious</label>
+            </div>
+            &emsp;
+            <div class="radio-inline">
+              <label><input type="radio" name="answer5" value="Harmonious">Harmonious</label>
+            </div>
+          </div>
+        </div>
+        <!-- end Q5 -->
+      
+        <!-- start Q6 -->
+        <div class="list-post-box format-standard"> 
+          <div class="list-post">
+            &emsp;<strong>6. &emsp;</strong><div class="radio-inline">
+              <label><input type="radio" name="answer6" value="Energetic">Energetic</label>
+            </div>
+            &emsp;
+            <div class="radio-inline">
+              <label><input type="radio" name="answer6" value="Over-Generous">Over-Generous</label>
+            </div>
+            &emsp;
+            <div class="radio-inline">
+              <label><input type="radio" name="answer6" value="Spunky">Spunky</label>
+            </div>
+          </div>
+        </div>
+        <!-- end Q6 -->
+
+        <!-- start Q7 -->
+        <div class="list-post-box format-standard"> 
+          <div class="list-post">
+            &emsp;<strong>7. &emsp;</strong><div class="radio-inline">
+              <label><input type="radio" name="answer7" value="Forceful">Forceful</label>
+            </div>
+            &emsp;
+            <div class="radio-inline">
+              <label><input type="radio" name="answer7" value="Disciplined">Disciplined</label>
+            </div>
+            &emsp;
+            <div class="radio-inline">
+              <label><input type="radio" name="answer7" value="Charismatic">Charismatic</label>
+            </div>
+          </div>
+        </div>
+        <!-- end Q7 -->
+
+        <!-- start Q8 -->
+        <div class="list-post-box format-standard"> 
+          <div class="list-post">
+            &emsp;<strong>8. &emsp;</strong><div class="radio-inline">
+              <label><input type="radio" name="answer8" value="Believable">Believable</label>
+            </div>
+            &emsp;
+            <div class="radio-inline">
+              <label><input type="radio" name="answer8" value="Dutiful">Dutiful</label>
+            </div>
+            &emsp;
+            <div class="radio-inline">
+              <label><input type="radio" name="answer8" value="Idealist">Idealist</label>
+            </div>
+          </div>
+        </div>
+        <!-- end Q8 -->
+
+        <!-- start Q9 -->
+        <div class="list-post-box format-standard"> 
+          <div class="list-post">
+            &emsp;<strong>9. &emsp;</strong><div class="radio-inline">
+              <label><input type="radio" name="answer9" value="Daring">Daring</label>
+            </div>
+            &emsp;
+            <div class="radio-inline">
+              <label><input type="radio" name="answer9" value="Compassionate">Compassionate</label>
+            </div>
+            &emsp;
+            <div class="radio-inline">
+              <label><input type="radio" name="answer9" value="Logical">Logical</label>
+            </div>
+          </div>
+        </div>
+        <!-- end Q9 -->
+
+        <p class="submit"><input type="submit" value="Submit" style="background:none; border-width:0px; color:white;" /></p>
+        <br>
+      <% end %>
+
+      <footer>
+        <div class="footer-lower">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="copyright">Copyright 2017. All rights reserved.</div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-    <div class="radio-inline">
-      <label><input type="radio" name="answer1" value="Trusting">Trusting</label>
-    </div>
-    <div class="radio-inline">
-      <label><input type="radio" name="answer1" value="Structured">Structured</label>
-    </div>
-  <hr>
-    <strong>2. &emsp;</strong><div class="radio-inline">
-      <label><input type="radio" name="answer2" value="Spontaneous">Spontaneous</label>
-    </div>
-    <div class="radio-inline">
-      <label><input type="radio" name="answer2" value="Dreamer">Dreamer</label>
-    </div>
-    <div class="radio-inline">
-      <label><input type="radio" name="answer2" value="Analytical">Analytical</label>
-    </div>
-  <hr>
-    <strong>3. &emsp;</strong><div class="radio-inline">
-      <label><input type="radio" name="answer3" value="Stubborn">Stubborn</label>
-    </div>
-    <div class="radio-inline">
-      <label><input type="radio" name="answer3" value="Dictatorial">Dictatorial</label>
-    </div>
-    <div class="radio-inline">
-      <label><input type="radio" name="answer3" value="Rebellious">Rebellious</label>
-    </div>
-  <hr>
-    <strong>4. &emsp;</strong><div class="radio-inline">
-      <label><input type="radio" name="answer4" value="Persistent">Persistent</label>
-    </div>
-    <div class="radio-inline">
-      <label><input type="radio" name="answer4" value="Demanding">Demanding</label>
-    </div>
-    <div class="radio-inline">
-      <label><input type="radio" name="answer4" value="Passionate">Passionate</label>
-    </div>
-  <hr>
-    <strong>5. &emsp;</strong><div class="radio-inline">
-      <label><input type="radio" name="answer5" value="Nurturing">Nurturing</label>
-    </div>
-    <div class="radio-inline">
-      <label><input type="radio" name="answer5" value="Cautious">Cautious</label>
-    </div>
-    <div class="radio-inline">
-      <label><input type="radio" name="answer5" value="Harmonious">Harmonious</label>
-    </div>
-  <hr>
-    <strong>6. &emsp;</strong><div class="radio-inline">
-      <label><input type="radio" name="answer6" value="Energetic">Energetic</label>
-    </div>
-    <div class="radio-inline">
-      <label><input type="radio" name="answer6" value="Over-Generous">Over-Generous</label>
-    </div>
-    <div class="radio-inline">
-      <label><input type="radio" name="answer6" value="Spunky">Spunky</label>
-    </div>
-  <hr>
-    <strong>7. &emsp;</strong><div class="radio-inline">
-      <label><input type="radio" name="answer7" value="Forceful">Forceful</label>
-    </div>
-    <div class="radio-inline">
-      <label><input type="radio" name="answer7" value="Disciplined">Disciplined</label>
-    </div>
-    <div class="radio-inline">
-      <label><input type="radio" name="answer7" value="Charismatic">Charismatic</label>
-    </div>
-  <hr>
-    <strong>8. &emsp;</strong><div class="radio-inline">
-      <label><input type="radio" name="answer8" value="Believable">Believable</label>
-    </div>
-    <div class="radio-inline">
-      <label><input type="radio" name="answer8" value="Dutiful">Dutiful</label>
-    </div>
-    <div class="radio-inline">
-      <label><input type="radio" name="answer8" value="Idealist">Idealist</label>
-    </div>
-  <hr>
-    <strong>9. &emsp;</strong><div class="radio-inline">
-      <label><input type="radio" name="answer9" value="Daring">Daring</label>
-    </div>
-    <div class="radio-inline">
-      <label><input type="radio" name="answer9" value="Compassionate">Compassionate</label>
-    </div>
-    <div class="radio-inline">
-      <label><input type="radio" name="answer9" value="Logical">Logical</label>
-    </div>
-  <hr>
-  <p><%= submit_tag "Get My Color!"%></p>
-<% end %>
+  </div>
+</div>
+
+

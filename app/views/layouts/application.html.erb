@@ -121,24 +121,24 @@
         <div class="sidebar-widget"> 
           <!-- widget box start -->
           <% if current_user %>
-            <h3><a href="http://localhost:3000/colors">Your Colors</a></h3>
+            <h3><a href="http://localhost:3000/cards">My Color Cards</a></h3>
+            <br>
             <% current_user.cards.each do |card| %>
-              <% card.colors.each do |color| %>
-                <ul class="recent-post-list">
-                  <li class="format-standard" style="background:<%= color.hex %>";>
-                    <div class="sidebar-meta-box">
-                      <center><h5><a href="/cards/<%= card.id %>/edit"><%= card.name %></a></h5></center>
-                    </div>
-                  </li>
-                </ul>
-              <% end %>
+              <ul class="recent-post-list">
+                <li class="format-standard" style="background:<%= card.color1 %>";>
+                  <div class="sidebar-meta-box">
+                    <center><h6><a href="/cards/<%= card.id %>/edit"><font color="black"><%= card.name.capitalize %></font></a></h6></center>
+                  </div>
+                </li>
+              </ul>
             <% end %>
-            <h3><a href="http://localhost:3000/projects">Your Projects</a></h3>
+            <h3><a href="http://localhost:3000/projects">My Projects</a></h3>
+            <br>
             <% current_user.projects.each do |project| %>
               <ul class="recent-post-list">
                 <li class="format-standard" style="background: black";>
                   <div class="sidebar-meta-box">
-                    <center><h5><a href="/projects/<%= project.id %>/edit"><%= project.name.capitalize %></a></h5></center>
+                    <center><h6><a href="/projects/<%= project.id %>/edit"><%= project.name.capitalize %></a></h6></center>
                   </div>
                 </li>
               </ul>
@@ -154,27 +154,27 @@
               <% card1 != card2 %>
               <li class="format-standard" style="background:<%= card1 %>">
                 <div class="sidebar-meta-box">
-                  <center><h5><font color="black"><%= card1 %></font></h5></center>
+                  <center><h6><font color="black"><%= card1 %></font></h6></center>
                 </div>
               </li>
               <li class="format-standard" style="background:<%= card2 %>">
                 <div class="sidebar-meta-box">
-                  <center><h5><font color="black"><%= card2 %></font></h5></center>
+                  <center><h6><font color="black"><%= card2 %></font></h6></center>
                 </div>
               </li>
               <li class="format-standard" style="background:<%= card3 %>">
                 <div class="sidebar-meta-box">
-                  <center><h5><font color="black"><%= card3 %></font></h5></center>
+                  <center><h6><font color="black"><%= card3 %></font></h6></center>
                 </div>
               </li>
               <li class="format-standard" style="background:<%= card4 %>">
                 <div class="sidebar-meta-box">
-                  <center><h5><font color="black"><%= card4 %></font></h5></center>
+                  <center><h6><font color="black"><%= card4 %></font></h6></center>
                 </div>
               </li>
               <li class="format-standard" style="background:<%= card5 %>">
                 <div class="sidebar-meta-box">
-                  <center><h5><font color="black"><%= card5 %></font></h5></center>
+                  <center><h6><font color="black"><%= card5 %></font></h6></center>
                 </div>
               </li>
             </ul>

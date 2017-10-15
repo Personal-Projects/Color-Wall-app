@@ -1,49 +1,123 @@
-<%= form_tag "/colors", method: :get do %>
-  <%= color_field_tag 'color', "#c99ea7", id:"jasmine", name:"the_color"%>
-  <%= submit_tag "Find my palette" %>
-<% end %>
+<div class="left-container">
+  <div class="main-container scroll-container">
+    <div class="blog-post-container">
+     
+      <!-- post start -->
+      <div class="standard-post-box format-standard" style="background: grey">
+        <div class="standard-post-box-content">
+          <center><h1 class="standard-post-title"><font color="#ffffff">Colors Index</font></h1></center>
+          <hr>
+          <br>
+          <h4 class="standard-post-title">
+            <%= form_tag "/colors", method: :get do %>
+            <font color="#ffffff">Click the box to find your color</font>
+              <p class="color_swatch"><%= color_field_tag 'color', "#ffffff", id:"jasmine", name:"the_color"%></p>
+              <br>
+              <p class="submit"><input type="submit" value="Submit" style="background:none; border-width:0px; color:white;" /></p>
+              <br>
+            <% end %>
+          </h4>
+        </div>
+      </div>
+      <!-- post end -->
 
-<%= form_tag "/cards", method: :post do %>
-  <h3>Triad Palette</h3>
-  <div>
-    <% @hex.palette.triad.each do |triad_color|%>
-      <div style="background:<%= triad_color %>" class="box"><input name="colors[card_one][]" value="<%= triad_color %>" type="checkbox"></div>
-    <% end %>
-    <br>
-    <br>
+      <%= form_tag "/cards", method: :post do %>
+        <!-- post start -->
+        <div class="standard-post-box format-standard" style="background: grey">
+          <div class="standard-post-box-content">
+            <h4><font color="white">Triad Palette</font></h4>
+            <div>
+              <% @hex.palette.triad.each do |triad_color|%>
+                <div style="background:<%= triad_color %>" class="box"><input name="colors[card_one][]" value="<%= triad_color %>" type="checkbox"></div>
+              <% end %>
+            </div>
+            <br>
+          </div>
+        </div>
+        <!-- post end -->
+
+        <!-- post start -->
+        <div class="standard-post-box format-standard" style="background: grey">
+          <div class="standard-post-box-content">
+            <h4><font color="white">Split Complement Palette</font></h4>
+            <div>
+              <% @hex.palette.split_complement.each do |split_complement_color|%>
+                <div style="background:<%= split_complement_color %>" class="box"><input name="colors[card_one][]" value="<%= split_complement_color %>" type="checkbox"></div>
+              <% end %>
+            </div>
+            <br>
+          </div>
+        </div>
+        <!-- post end -->
+
+        <!-- post start -->
+        <div class="standard-post-box format-standard" style="background: grey">
+          <div class="standard-post-box-content">
+            <h4><font color="white">Tetrad Palette</font></h4>
+            <div>
+              <% @hex.palette.tetrad.each do |tetrad_color|%>
+                <div style="background:<%= tetrad_color %>" class="box"><input name="colors[card_one][]" value="<%= tetrad_color %>" type="checkbox"></div>
+              <% end %>
+            </div>
+            <br>
+          </div>
+        </div>
+        <!-- post end -->
+
+        <!-- post start -->
+        <div class="standard-post-box format-standard" style="background: grey">
+          <div class="standard-post-box-content">
+            <h4><font color="white">Analogous Palette</font></h4>
+            <div>
+              <% @hex.palette.analogous.each do |analogous_color|%>
+                <div style="background:<%= analogous_color %>" class="box"><input name="colors[card_one][]" value="<%= analogous_color %>" type="checkbox"></div>
+              <% end %>
+            </div>
+            <br>
+          </div>
+        </div>
+        <!-- post end -->
+
+        <!-- post start -->
+        <div class="standard-post-box format-standard" style="background: grey">
+          <div class="standard-post-box-content">
+            <h4><font color="white">Monochromatic Palette</font></h4>
+            <div>
+              <% @hex.palette.monochromatic.each do |monochromatic_color|%>
+                <div style="background:<%= monochromatic_color %>" class="box"><input name="colors[card_one][]" value="<%= monochromatic_color %>" type="checkbox"></div>
+              <% end %>
+            </div>
+            <br>
+          </div>
+        </div>
+        <!-- post end -->
+
+        <!-- post start -->
+        <div class="standard-post-box format-standard" style="background: grey">
+          <div class="standard-post-box-content">
+            <h4><font color="white">Card name:</font></h4>
+            <input name="card_name" type="text">
+            <br>
+          </div>
+        </div>
+        <!-- post end -->
+
+        <!-- button start -->
+        <h2 class="button"><input type="submit" value="Submit" style="background:none; border-width:0px; color:white;" /></h2>
+        <!-- button end -->
+
+      <% end %>
+
+      <footer>
+        <div class="footer-lower">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="copyright">Copyright 2017. All rights reserved.</div>
+            </div>
+          </div>
+          </div>
+      </footer>
+    </div>
   </div>
-  <h3>Tetrad Palette</h3>
-  <div>
-    <% @hex.palette.tetrad.each do |tetrad_color|%>
-      <div style="background:<%= tetrad_color %>" class="box"><input name="colors[card_two][]" value="<%= tetrad_color %>" type="checkbox"></div>
-    <% end %>
-  </div>
-  <br>
-  <br>
-  <h3>Split Complement Palette</h3>
-  <div>
-    <% @hex.palette.split_complement.each do |split_complement_color|%>
-      <div style="background:<%= split_complement_color %>" class="box"><input name="colors[card_two][]" value="<%= split_complement_color %>" type="checkbox"></div>
-    <% end %>
-  </div>
-  <br>
-  <br>
-  <h3>Analogous Palette</h3>
-  <div>
-    <% @hex.palette.analogous.each do |analogous_color|%>
-      <div style="background:<%= analogous_color %>" class="box"><input name="colors[card_two][]" value="<%= analogous_color %>" type="checkbox"></div>
-    <% end %>
-  </div>
-  <br>
-  <br>
-  <h3>Monochromatic Palette</h3>
-  <div>
-    <% @hex.palette.monochromatic.each do |monochromatic_color|%>
-      <div style="background:<%= monochromatic_color %>" class="box"><input name="colors[card_two][]" value="<%= monochromatic_color %>" type="checkbox"></div>
-    <% end %>
-  </div>
-  <br>
-  <br>
-  <br>
-  <p><%= submit_tag "Add All Checked Palette to My Wall"%></p>
-<% end %>
+</div>
+
