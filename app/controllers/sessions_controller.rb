@@ -7,13 +7,13 @@ class SessionsController < ApplicationController
       redirect_to '/pages'
     else
       flash[:warning] = 'Invalid email or password!'
-      redirect_to '/login'
+      redirect_to '/pages'
     end
   end
 
   def destroy
     session[:user_id] = nil
     flash[:success] = 'Come back soon!'
-    redirect_to '/login'
+    redirect_to '/pages'
   end
 end
