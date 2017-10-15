@@ -1,8 +1,4 @@
 class SessionsController < ApplicationController
-  def new
-    render 'new.html.erb'
-  end
-
   def create
     user = User.find_by(user_name: params[:user_name])
     if user && user.authenticate(params[:password])

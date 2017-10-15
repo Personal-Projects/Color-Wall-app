@@ -16,6 +16,7 @@ class ProjectsController < ApplicationController
       concept: params[:concept],
       user_id: current_user.id
     )
+    project.save
     redirect_to '/projects'
   end
 

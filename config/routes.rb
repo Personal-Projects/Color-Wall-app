@@ -19,7 +19,6 @@ Rails.application.routes.draw do
   patch '/users/:id' => 'users#update' # Edit profile DONE CHECK
   # get '/users/:id' => 'users#destroy' # Delete profile
 
-  get '/login' => 'sessions#new' # Login page DONE
   post '/login' => 'sessions#create' # Success log in DONE CHECK
   get '/logout' => 'sessions#destroy' # Logout DONE
 
