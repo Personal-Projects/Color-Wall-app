@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171015163057) do
+ActiveRecord::Schema.define(version: 20171017001656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,13 +34,6 @@ ActiveRecord::Schema.define(version: 20171015163057) do
     t.string "color4"
     t.string "color5"
     t.string "color6"
-  end
-
-  create_table "colors", force: :cascade do |t|
-    t.string "hex"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "project_cards", force: :cascade do |t|

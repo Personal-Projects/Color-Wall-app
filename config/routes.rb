@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get '/pages' => 'pages#index' # Home page CHECK
 
-  # get '/walls' => 'walls#index' # My Walls page
   get '/projects' => 'projects#index' # Projects index page CHECK
   get '/projects/new' => 'projects#new' # New Project page CHECK
   post '/projects' => 'projects#create' # Success new project created. CHECK
@@ -11,13 +10,11 @@ Rails.application.routes.draw do
 
   post '/color_projects/:id' => 'projects#create'
 
-  # get '/users' => 'users#index' # Profile page DONE
   get '/signup' => 'users#new' # New users signup page DONE CHECK
   post '/users' => 'users#create' # Success signup DONE CHECK
   get '/users/:id' => 'users#show' # Other user's page
   get '/users/:id/edit' => 'users#edit' # Profile page DONE
   patch '/users/:id' => 'users#update' # Edit profile DONE CHECK
-  # get '/users/:id' => 'users#destroy' # Delete profile
 
   post '/login' => 'sessions#create' # Success log in DONE CHECK
   get '/logout' => 'sessions#destroy' # Logout DONE
@@ -26,10 +23,6 @@ Rails.application.routes.draw do
   get '/quizzes/new' => 'quizzes#new' # What Color Are You form page
   post '/quizzes' => 'quizzes#create' # Success color generated. CHECK
   get '/results' => 'quizzes#result' # Quiz form result
-
-  # get '/matches' => 'matches#index' # Color Matches Your Projects cover page
-  # get '/matches/new' => 'matches#new' # Color Matches Your Projects form page
-  # get '/matches' => 'matches#create' # Success card generated.
 
   get '/colors' => 'colors#index' # Index of all colors
 

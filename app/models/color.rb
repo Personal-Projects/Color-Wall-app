@@ -1,9 +1,4 @@
 class Color < ApplicationRecord
-  belongs_to :user
-  has_many :project_colors
-  has_many :projects, through: :project_colors
-  has_many :card_colors
-  has_many :cards, through: :card_colors
 
   def complement
     hsl = self.hsl
