@@ -1,4 +1,28 @@
-<h2>Quiz Results Page</h2>
+<div class="left-container">
+  <div class="main-container scroll-container" style="background:black"> 
+    
+    <!-- post start -->
+    <div class="post-box format-gallery" style="background:black"></div>
+      <br>
+      <br>
+      <div class="big_box" style="background:<%= @color %>">
+      <br>
+      <div class="post-box-content">
+        <h4 class="post-title move">Your color is</h4>
+        <br>
+        <h1><%= @color_name %></h1>
+      </div>  
+    </div>
+    <!-- post end --> 
 
-<p>Your color is <%= @color_name %>!</p>
-<div style="background:<%= @color %>" class="big_box"></div>
+    <footer>
+      <div class="footer-lower">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="copyright">Copyright 2017. All rights reserved.</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>

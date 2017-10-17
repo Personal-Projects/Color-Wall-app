@@ -1,45 +1,39 @@
-<h3>Edit Profile Page</h3>
+<div class="left-container">
+  <div class="main-container scroll-container">
+    <div class="main-header">
+      <h1>Edit Profile</h1>
+    </div>
+    <div class="main-content-container">
+      <%= form_tag "/users/#{@user.id}", method: :patch do %>
+        <div class="register_form" class="form-group"><label>First Name: </label><input type="text" name="first_name" value="<%= @user.first_name %>" class="form-control"></div>
+        <br>
+        <div class="register_form" class="form-group"><label>Last Name: </label><input type="text" name="last_name" value="<%= @user.last_name %>" class="form-control"></div>
+        <br>
+        <div class="register_form" class="form-group"><label>Email: </label><input type="email" name="email" value="<%= @user.email %>" class="form-control"></div>
+        <br>
+        <div class="register_form" class="form-group"><label>Username: </label><input type="text" name="user_name" value="<%= @user.user_name %>" class="form-control"></div>
+        <br>
+        <div class="register_form" class="form-group"><label>Birthdate: </label><input name="birth_date" class="form-control" value="<%= @user.birth_date %>"></input></div>
+        <br>
+        <div class="register_form" class="form-group"><label>Favorite Color: </label><input name="favorite_color" value="<%= @user.favorite_color %>" class="form-control"></input></div>
+        <br>
+        <div class="register_form" class="form-group"><label>New Password: </label><input type="password" name="password" class="form-control"></input></div>
+        <br>
+        <div class="register_form" class="form-group"><label>Password Confirmation: </label><input type="password" name="password_digest" class="form-control"></input></div>
+        <br>
+        <div class="register_form" class="form-group"><input type="submit" value="Complete" class="btn btn-default"></div>
+        <br>
+      <% end %>
+    </div>
+    <footer>
+      <div class="footer-lower">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="copyright">Copyright 2017. All rights reserved.</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
 
-<%= form_tag("/users/#{@user.id}", method: :patch) do %>
-    <div>
-      <%= label_tag :first_name %>
-      <%= text_field_tag :first_name, @user.first_name %>
-    </div>
-    <br>
-    <div>
-      <%= label_tag :last_name %>
-      <%= text_field_tag :last_name, @user.last_name %>
-    </div>
-    <br>
-    <div>
-      <%= label_tag :email %>
-      <%= email_field_tag :email, @user.email %>
-    </div>
-    <br>
-    <div>
-      <%= label_tag :user_name %>
-      <%= text_field_tag :user_name, @user.user_name %>
-    </div>
-    <br>
-    <div>
-      <%= label_tag :birth_date %>
-      <%= text_field_tag :birth_date, @user.birth_date %>
-    </div>
-    <br>
-    <div>
-      <%= label_tag :favorite_color %>
-      <%= text_field_tag :favorite_color, @user.favorite_color %>
-    </div>
-    <br>
-    <div>
-      <%= label_tag :password %>
-      <%= password_field_tag :password, @user.password %>
-    </div>
-    <br>
-        <div>
-      <%= label_tag :password %>
-      <%= password_field_tag :password, @user.password_confirmation %>
-    </div>
-    <br>
-    <p><%= submit_tag "Edit my profile" %></p>
-  <% end %>

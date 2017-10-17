@@ -108,24 +108,23 @@ class QuizzesController < ApplicationController
     p count[:blue]
     p count[:purple]
 
-# REMEMBER: change #color to Color.find_by(hex: '#8b0000').hex to use the Color table!
     if count.max_by { |k, v| v }[0] == :red
-      @color_name = 'RED'
+      @color_name = 'Sunset Red'
       @color = '#8b0000'
     elsif count.max_by { |k, v| v }[0] == :orange
-      @color_name = 'ORANGE'
+      @color_name = 'Tangerine Orange'
       @color = '#ffa500'
     elsif count.max_by { |k, v| v }[0] == :yellow
-      @color_name = 'YELLOW'
+      @color_name = 'Sunshine Yellow'
       @color = '#ffd700'
     elsif count.max_by { |k, v| v }[0] == :green
-      @color_name = 'GREEN'
+      @color_name = 'Green Apple'
       @color = '#008000'
     elsif count.max_by { |k, v| v }[0] == :blue
-      @color_name = 'BLUE'
+      @color_name = 'Sea Blue'
       @color = '#0099cc'
     elsif count.max_by { |k, v| v }[0] == :purple
-      @color_name = 'PURPLE'
+      @color_name = 'Royal Purple'
       @color = '#800080'
     end
 

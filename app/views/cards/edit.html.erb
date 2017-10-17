@@ -3,14 +3,49 @@
     <div class="main-header">
       <h1>Edit Card</h1>
     </div>
-    <% @card.colors.each do |color| %>
-      <div class="map-container" style="background:<%= color.hex %>"></div>
+
+    <% if @card.color1 %>
+      <div class="standard-post-box-content cardbox" style="background:<%= @card.color1 %>">
+        <br>
+        <center><h5><font face="trebuchet MS"><%= @card.color1.upcase %></font></h5></center>
+      </div>
     <% end %>
+    <% if @card.color2 %> 
+      <div class="standard-post-box-content cardbox" style="background:<%= @card.color2 %>">
+        <br>
+        <center><h5><font face="trebuchet MS"><%= @card.color2.upcase %></font></h5></center>
+      </div>
+    <% end %>
+    <% if @card.color3 %>
+      <div class="standard-post-box-content cardbox" style="background:<%= @card.color3 %>">
+        <br>
+        <center><h5><font face="trebuchet MS"><%= @card.color3.upcase %></font></h5></center>
+      </div>
+    <% end %>
+    <% if @card.color4 %>
+      <div class="standard-post-box-content cardbox" style="background:<%= @card.color4 %>">
+        <br>
+        <center><h5><font face="trebuchet MS"><%= @card.color4.upcase %></font></h5></center>
+      </div>
+    <% end %>
+    <% if @card.color5 %>
+      <div class="standard-post-box-content cardbox" style="background:<%= @card.color5 %>">
+        <br>
+        <center><h5><font face="trebuchet MS"><%= @card.color5.upcase %></font></h5></center>
+      </div>
+    <% end %>
+    <% if @card.color6 %>
+      <div class="standard-post-box-content cardbox" style="background:<%= @card.color6 %>">
+        <br>
+        <center><h5><font face="trebuchet MS"><%= @card.color6.upcase %></font></h5></center>
+      </div>
+    <% end %>
+
     <div class="main-content-container">
       <%= form_tag "/cards/#{@card.id}", method: :patch do %>
         <div class="form-group"><label>Card Name</label><input type="text" name="name" value="<%= @card.name %>"  class="form-control" required /></div>
-        <div class="form-group"><input type="submit" value="Edit Card" class="btn btn-default">
-          <%= link_to "Delete Card", "/cards/#{@card.id}", {method: :delete, class: "btn btn-danger" } %>
+        <div class="form-group"><input type="submit" value="Edit" class="btn btn-default">
+          <%= link_to "Delete", "/cards/#{@card.id}", {method: :delete, class: "btn btn-danger" } %>
         </div>
       <% end %>
     </div>

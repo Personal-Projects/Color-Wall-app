@@ -1,7 +1,29 @@
 .box {
   float: left;
-  width: 60px;
-  height: 30px;
+  width: 100px;
+  height: 50px;
   margin: 5px;
   border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 12px;
+}
+
+.color_swatch {
+  margin-right: 500px;
+  margin-bottom: 200px;
+  float: right;
+}
+
+.submit {
+  height: 50px;
+  width: 100px;
+  float: left;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.button1 {
+  height: 50px;
+  width: 100px;
+  disply: block;
+  margin-left: 400px;
 }
