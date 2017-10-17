@@ -35,23 +35,23 @@
     <!-- header start -->
     <header>
       <div class="header-content scroll-container">
-        <div class="logo"><a href="http://localhost:3000/pages"><img src="/images/drop.png" alt="Color Wall" /></a></div>
+        <div class="logo"><a href="/pages"><img src="/images/drop.png" alt="Color Wall" /></a></div>
         <nav>
           <ul>
-            <li><a href="http://localhost:3000/pages">Home</a></li>
-            <li><a href="http://localhost:3000/colors">Colors Index</a></li>
-            <li><a href="http://localhost:3000/quizzes">Color Quiz</a></li>
+            <li><a href="/pages">Home</a></li>
+            <li><a href="/colors">Colors Index</a></li>
+            <li><a href="/quizzes">Color Quiz</a></li>
             <% if current_user %>
               <li class="dropdown"><a href="#">Account</a>
                 <ul>
-                  <li><a href="http://localhost:3000/users/<%= current_user.id %>">Profile</a></li>
-                  <li><a href="http://localhost:3000/logout">Logout</a></li>
+                  <li><a href="/users/<%= current_user.id %>">Profile</a></li>
+                  <li><a href="/logout">Logout</a></li>
                 </ul>
               </li>
               <li class="dropdown"><a href="#">My Wall</a>
                 <ul>
-                  <li><a href="http://localhost:3000/projects">Projects</a></li>
-                  <li><a href="http://localhost:3000/cards">Color Cards</a></li>
+                  <li><a href="/projects">Projects</a></li>
+                  <li><a href="/cards">Color Cards</a></li>
                 </ul>
               </li>
             <% end %>
@@ -60,10 +60,10 @@
         <div class="subscription-box">
           <% if current_user %>
             <h4>Not you?</h4>
-            <p>Sign in, or register <a href="http://localhost:3000/signup">HERE</a></p>
+            <p>Sign in, or register <a href="/signup">HERE</a></p>
           <% else %>
             <h4>Sign in</h4>
-            <p>or become a member <a href="http://localhost:3000/signup">HERE</a></p>
+            <p>or become a member <a href="/signup">HERE</a></p>
           <% end %>
           <!-- Begin MailChimp Signup Form -->
           <div id="mc_embed_signup">
@@ -119,7 +119,7 @@
         <div class="sidebar-widget"> 
           <!-- widget box start -->
           <% if current_user %>
-            <h3><a href="http://localhost:3000/cards">My Color Cards</a></h3>
+            <h3><a href="/cards">My Color Cards</a></h3>
             <br>
             <% current_user.cards.each do |card| %>
               <ul class="recent-post-list">
@@ -130,7 +130,7 @@
                 </li>
               </ul>
             <% end %>
-            <h3><a href="http://localhost:3000/projects">My Projects</a></h3>
+            <h3><a href="/projects">My Projects</a></h3>
             <br>
             <% current_user.projects.each do |project| %>
               <ul class="recent-post-list">
