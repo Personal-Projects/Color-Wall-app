@@ -1,5 +1,5 @@
 class RemoveColorTable < ActiveRecord::Migration[5.1]
   def change
-    drop_table :colors
+    # drop_table :colors
   end
 end
