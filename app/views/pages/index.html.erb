@@ -37,23 +37,25 @@
     </div>
     <!-- post end --> 
 
-    <!-- post start -->
-    <div class="post-box format-gallery" style="background: black"> 
-      <!-- post thumbnail --> 
-      <br>
-      <br>
-      <a title="Colors Index"><img src="/images/palette.png" alt="" /></a>
-      <br>
-      <div class="post-box-content">
+    <% if current_user %>
+      <!-- post start -->
+      <div class="post-box format-gallery" style="background: black"> 
+        <!-- post thumbnail --> 
         <br>
         <br>
-        <h2 class="post-title"><a href="/colors" title="Colors Index">Colors Index</a></h2>
+        <a title="Colors Index"><img src="/images/palette.png" alt="" /></a>
         <br>
-        <h5>Browse through all the colors of the rainbow</h5>
-        <br>
-      </div>  
-    </div>
-    <!-- post end --> 
+        <div class="post-box-content">
+          <br>
+          <br>
+          <h2 class="post-title"><a href="/colors" title="Colors Index">Colors Index</a></h2>
+          <br>
+          <h5>Browse through all the colors of the rainbow</h5>
+          <br>
+        </div>  
+      </div>
+      <!-- post end --> 
+      <% end %>
 
     <footer>
       <div class="footer-lower">
