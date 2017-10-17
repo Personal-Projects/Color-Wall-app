@@ -39,9 +39,9 @@
         <nav>
           <ul>
             <li><a href="/pages">Home</a></li>
-            <li><a href="/colors">Colors Index</a></li>
             <li><a href="/quizzes">Color Quiz</a></li>
             <% if current_user %>
+              <li><a href="/colors">Colors Index</a></li>
               <li class="dropdown"><a href="#">Account</a>
                 <ul>
                   <li><a href="/users/<%= current_user.id %>">Profile</a></li>
