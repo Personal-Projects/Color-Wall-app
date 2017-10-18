@@ -15,6 +15,11 @@
             <div class="list-date"><i class="fa fa-calendar-o"></i> Start Date: <%= project.start_date %></div>
             <div class="list-date"><i class="fa fa-calendar-o"></i> Deadline: <%= project.finish_date %></div>
             <div>Concept: <%= project.concept %></div>
+            <div>
+              <h5>Cards: </h5><% project.cards.each do |card| %>
+                <p><a href="/cards/<%= card.id %>"><%= card.name %></a></p>
+              <% end %>
+            </div>
           </div>
           <a href="/projects/<%= project.id %>" class="btn more">View Full Project</a>
         </div>

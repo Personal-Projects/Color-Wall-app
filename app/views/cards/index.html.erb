@@ -11,10 +11,17 @@
       <% @cards.each do |card| %>
         <div class="list-post-box format-standard"> 
           <div class="list-post-right">
-            <h4 class="list-post-title"><%= card.name.capitalize %></h4>
-            </div>
-            <a href="/cards/<%= card.id %>" class="btn more">View Card</a>
+            <h4 class="list-post-title"><a href="/cards/<%= card.id %>"><%= card.name.capitalize %></a></h4>
           </div>
+          <%= form_tag '/project_cards', method: :post do  %>
+            <select>
+              <% @projects.each do |project| %>
+                <option name="project_id" value="<% project.id %>"><%= project.name %></option>
+              <% end %>
+            </select>
+            <div class="add"><input type="submit" value="Add to project" class="btn btn-success"></div>
+          <% end %>
+        </div>
       <% end %>
       <!-- post end -->
 

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   patch '/projects/:id' => 'projects#update'
   delete '/projects/:id' => 'projects#destroy'
 
-  post '/color_projects/:id' => 'projects#create'
+  post '/project_cards' => 'project_cards#create'
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
