@@ -1,37 +1,38 @@
 Rails.application.routes.draw do
-  get '/pages' => 'pages#index' # Home page CHECK
+  get '/pages' => 'pages#index'
 
-  get '/projects' => 'projects#index' # Projects index page CHECK
-  get '/projects/new' => 'projects#new' # New Project page CHECK
-  post '/projects' => 'projects#create' # Success new project created. CHECK
-  get '/projects/:id/edit' => 'projects#edit' # Edit a Project CHECK
-  patch '/projects/:id' => 'projects#update' # Success update project CHECK
-  delete '/projects/:id' => 'projects#destroy' # Delete project CHECK
+  get '/projects' => 'projects#index'
+  get '/projects/new' => 'projects#new'
+  post '/projects' => 'projects#create'
+  get '/projects/:id' => 'projects#show'
+  get '/projects/:id/edit' => 'projects#edit'
+  patch '/projects/:id' => 'projects#update'
+  delete '/projects/:id' => 'projects#destroy'
 
   post '/color_projects/:id' => 'projects#create'
 
-  get '/signup' => 'users#new' # New users signup page DONE CHECK
-  post '/users' => 'users#create' # Success signup DONE CHECK
-  get '/users/:id' => 'users#show' # Other user's page
-  get '/users/:id/edit' => 'users#edit' # Profile page DONE
-  patch '/users/:id' => 'users#update' # Edit profile DONE CHECK
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+  get '/users/:id' => 'users#show'
+  get '/users/:id/edit' => 'users#edit'
+  patch '/users/:id' => 'users#update'
 
-  post '/login' => 'sessions#create' # Success log in DONE CHECK
-  get '/logout' => 'sessions#destroy' # Logout DONE
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
 
-  get '/quizzes' => 'quizzes#index' # What Color Are You cover page
-  get '/quizzes/new' => 'quizzes#new' # What Color Are You form page
-  post '/quizzes' => 'quizzes#create' # Success color generated. CHECK
-  get '/results' => 'quizzes#result' # Quiz form result
+  get '/quizzes' => 'quizzes#index'
+  get '/quizzes/new' => 'quizzes#new'
+  post '/quizzes' => 'quizzes#create'
+  get '/results' => 'quizzes#result'
 
-  get '/colors' => 'colors#index' # Index of all colors
+  get '/colors' => 'colors#index'
 
-  get '/cards' => 'cards#index' # Index of cards CHECK
-  post '/cards' => 'cards#create' # CHECK
-  get '/cards/:id' => 'cards#show' # show of cards CHECK
-  get '/cards/:id/edit' => 'cards#edit' # Edit cards page CHECK
-  patch '/cards/:id' => 'cards#update' # CHECK
-  delete '/cards/:id' => 'cards#destroy' # CHECK
+  get '/cards' => 'cards#index'
+  post '/cards' => 'cards#create'
+  get '/cards/:id' => 'cards#show'
+  get '/cards/:id/edit' => 'cards#edit'
+  patch '/cards/:id' => 'cards#update'
+  delete '/cards/:id' => 'cards#destroy'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

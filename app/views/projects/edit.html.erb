@@ -9,9 +9,11 @@
         <div class="form-group"><label>Start Date: </label><input type="text" name="start_date" value="<%= @project.start_date %>"  class="form-control" required /></div>
         <div class="form-group"><label>Deadline: </label><input type="text" name="finish_date" value="<%= @project.finish_date %>"  class="form-control" required /></div>
         <div class="form-group"><label>Concept: </label><textarea name="concept" class="form-control" required><%= @project.concept %></textarea></div>
-        <div class="form-group"><input type="submit" value="Edit" class="btn btn-default">
-          <%= link_to "Delete", "/projects/#{@project.id}", {method: :delete, class: "btn btn-danger" } %>
-        </div>
+        <div class="form-group"><input type="submit" value="Confirm" class="btn btn-default"></div>
+      <% end %>
+
+      <%= form_tag "/projects/#{@project.id}", method: :delete do %>
+        <div class="form-group"><input type="submit" value="Delete" class="btn btn-danger"></div>
       <% end %>
     </div>
     <footer>

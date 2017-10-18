@@ -20,6 +20,11 @@ class ProjectsController < ApplicationController
     redirect_to '/projects'
   end
 
+  def show
+    @project = Project.find_by(id: params[:id])
+    render 'show.html.erb'
+  end
+
   def edit
     @project = Project.find_by(id: params[:id])
     render 'edit.html.erb'
@@ -41,7 +46,7 @@ class ProjectsController < ApplicationController
     project = Project.find_by(id: params[:id])
     project.destroy
     flash[:danger] = "You just deleted a project"
-    redirect_to "/walls"
+    redirect_to "/projects"
   end
 end
 

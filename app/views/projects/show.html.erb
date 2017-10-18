@@ -1,0 +1,27 @@
+<div class="left-container">
+  <div class="main-container scroll-container">
+    <div class="main-header">
+      <h1>Edit Project</h1>
+    </div>
+    <div class="main-content-container">
+      <div class="list-post-box format-standard"> 
+        <div class="list-post-right">
+          <h4 class="list-post-title"><a href="/" title="Project"><%= @project.name.capitalize %></a></h4>
+          <div class="list-date"><i class="fa fa-calendar-o"></i> Start Date: <%= @project.start_date %></div>
+          <div class="list-date"><i class="fa fa-calendar-o"></i> Deadline: <%= @project.finish_date %></div>
+          <div>Concept: <%= @project.concept %></div>
+        </div>
+      </div>
+      <%= link_to "Edit", "/projects/#{@project.id}/edit", {method: :get, class: "btn btn-success" } %>
+    </div>
+    <footer>
+      <div class="footer-lower">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="copyright">Copyright 2017. All rights reserved.</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>

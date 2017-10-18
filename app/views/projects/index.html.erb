@@ -10,18 +10,14 @@
       <% @projects.each do |project| %>
         <!-- post start -->
         <div class="list-post-box format-standard"> 
-          <div class="list-post-left">
-          <!-- post thumbnail -->
-
-          </div>
           <div class="list-post-right">
             <h4 class="list-post-title"><a href="/" title="Project"><%= project.name.capitalize %></a></h4>
             <div class="list-date"><i class="fa fa-calendar-o"></i> Start Date: <%= project.start_date %></div>
             <div class="list-date"><i class="fa fa-calendar-o"></i> Deadline: <%= project.finish_date %></div>
             <div>Concept: <%= project.concept %></div>
-            </div>
-            <a href="/projects/<%= project.id %>/edit" class="btn more">View Full Project</a>
           </div>
+          <a href="/projects/<%= project.id %>" class="btn more">View Full Project</a>
+        </div>
         <!-- post end --> 
       <% end %>
     </div>
