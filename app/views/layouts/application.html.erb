@@ -107,7 +107,7 @@
           <div class="my-pic"><img src="/" alt="" /></div>
           <div class="my-details">
             <% if current_user %>
-              <h3><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h3>
+              <h5>Hello, <a href="/users/<%= current_user.id %>"><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></a></h5>
             <% else%>
               <h5>Welcome to</h5>
               <h1>Color Wall</h1>
