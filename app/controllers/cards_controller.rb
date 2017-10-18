@@ -43,7 +43,6 @@ class CardsController < ApplicationController
   def destroy
     @card = Card.find_by(id: params[:id])
     @card.destroy
-    flash[:danger] = "You just deleted a card!"
     redirect_to '/cards'
   end
 end
