@@ -10,14 +10,10 @@
       <!-- post start -->
       <% @cards.each do |card| %>
         <div class="list-post-box format-standard"> 
-          <div class="list-post-left">
-          <!-- post thumbnail -->
-
-          </div>
           <div class="list-post-right">
-            <h4 class="list-post-title"><a href="/cards/<%= card.id %>/edit" title="card"><%= card.name.capitalize %></a></h4>
+            <h4 class="list-post-title"><%= card.name.capitalize %></h4>
             </div>
-            <a href="/cards/<%= card.id %>/edit" class="btn more">View Card</a>
+            <a href="/cards/<%= card.id %>" class="btn more">View Card</a>
           </div>
       <% end %>
       <!-- post end -->

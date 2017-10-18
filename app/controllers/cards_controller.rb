@@ -21,6 +21,11 @@ class CardsController < ApplicationController
     redirect_to "/cards"
   end
 
+  def show
+    @card = Card.find_by(id: params[:id])
+    render 'show.html.erb'
+  end
+
   def edit
     @card = Card.find_by(id: params[:id])
     render 'edit.html.erb'
@@ -39,6 +44,6 @@ class CardsController < ApplicationController
     @card = Card.find_by(id: params[:id])
     @card.destroy
     flash[:danger] = "You just deleted a card!"
-    redirect_to '/pages'
+    redirect_to '/cards'
   end
 end

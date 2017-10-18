@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
   get '/cards' => 'cards#index' # Index of cards CHECK
   post '/cards' => 'cards#create' # CHECK
+  get '/cards/:id' => 'cards#show' # show of cards CHECK
   get '/cards/:id/edit' => 'cards#edit' # Edit cards page CHECK
   patch '/cards/:id' => 'cards#update' # CHECK
   delete '/cards/:id' => 'cards#destroy' # CHECK
